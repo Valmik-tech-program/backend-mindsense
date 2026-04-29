@@ -119,7 +119,7 @@ const saveTestScore = async (req, res) => {
 const saveDiaryScore = async (req, res) => {
   try {
     const userId = req.user._id;
-    const { disease, level, totalScore, dailySymptoms } = req.body;
+    const { disease, level, dailySymptoms } = req.body;
 
     const user = await User.findById(userId);
     if (!user) {
@@ -129,7 +129,6 @@ const saveDiaryScore = async (req, res) => {
     user.diaryScores.push({
       disease,
       level,
-      totalScore,
       dailySymptoms,
       date: new Date()
     });

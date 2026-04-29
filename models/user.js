@@ -25,7 +25,6 @@ const userSchema = new mongoose.Schema({
   diaryScores: [{
     disease: { type: String },
     level: { type: String },
-    totalScore: { type: Number },
     dailySymptoms: [{
       day: { type: Number },
       symptoms: [{ type: String }]
